@@ -1,0 +1,10 @@
+.drip {
+  color: purple;
+  text-shadow: 2px 2px black;
+  animation: drip 2s infinite;
+}
+@keyframes drip {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
