@@ -8,3 +8,52 @@
   50% { transform: translateY(2px); }
   100% { transform: translateY(0); }
 }
+
+
+
+@keyframes flickerShake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-3px, 2px) rotate(-0.5deg); }
+  20% { transform: translate(2px, -2px) rotate(0.5deg); }
+  30% { transform: translate(-1px, 1px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(0.3deg); }
+  50% { transform: translate(-2px, 2px) rotate(-0.3deg); }
+  60% { transform: translate(1px, -1px) rotate(0deg); }
+  70% { transform: translate(-2px, 1px) rotate(0.5deg); }
+  80% { transform: translate(2px, -2px) rotate(-0.5deg); }
+  90% { transform: translate(-1px, 1px) rotate(0.2deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.flicker {
+  animation: flickerShake 0.15s infinite;
+  position: relative;
+}
+
+/* Dim stays after flicker */
+.gallery-dim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.push-forward {
+  transform: scale(1.1) rotate(1deg);
+  z-index: 20;
+  animation: flickerShake 0.1s infinite;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.dimmed .gallery-dim {
+  opacity: 1;
+}

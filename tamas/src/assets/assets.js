@@ -18,12 +18,6 @@ import chracter6 from './chracter6.png'
 
 
 
-
-
-
-
-
-
 // You can replace these placeholders later
 export const assets = {
   Home,
@@ -81,5 +75,10 @@ export const extrachrac = [
   { name: 'Victor Sullivan', image: chracter5 },
   { name: 'Elena Fisher', image: chracter6 },
 ]
+
+
+export const galleryImages = [Home, download, Home, about2, about3, about4];
+
+
 export { left, right };
 
