@@ -12,6 +12,26 @@ import chracter3 from './chracter3.png'
 import chracter4 from './chracter4.png'
 import chracter5 from './chracter5.png'
 import chracter6 from './chracter6.png'
+import ghost from './ghost.png'
+import circle from './circle.png'
+import wall from './wall.png'
+import knife from './knife.png'
+import candle from './candle.png'
+import Book from './book.png'
+import skull from './skull.png'
+import rose from './rose.png'
+import cross from './cross.png'
+import mirror from './mirror.png'
+import doll from './doll.png'
+
+
+
+
+
+
+
+
+
 
 
 
@@ -33,7 +53,18 @@ export const assets = {
   chracter3,
   chracter4,
   chracter5,
-  chracter6
+  chracter6,
+  ghost,
+  circle,
+  wall,
+  knife,
+  candle,
+  Book,
+  skull,
+  rose,
+  cross,
+  mirror,
+  doll
 };
 
 export const about = [
@@ -77,7 +108,7 @@ export const extrachrac = [
 ]
 
 
-export const galleryImages = [Home, download, Home, about2, about3, about4];
+export const galleryImages = [knife, Book, skull, rose, cross, mirror];
 
 
 export { left, right };
