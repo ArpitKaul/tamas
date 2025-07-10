@@ -23,10 +23,7 @@ import rose from './rose.png'
 import cross from './cross.png'
 import mirror from './mirror.png'
 import doll from './doll.png'
-
-
-
-
+import runes from './runes.png'
 
 
 
@@ -64,7 +61,8 @@ export const assets = {
   rose,
   cross,
   mirror,
-  doll
+  doll,
+  runes
 };
 
 export const about = [
