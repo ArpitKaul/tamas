@@ -16,7 +16,6 @@ import ghost from './ghost.png'
 import circle from './circle.png'
 import wall from './wall.png'
 import knife from './knife.png'
-import candle from './candle.png'
 import Book from './book.png'
 import skull from './skull.png'
 import rose from './rose.png'
@@ -24,6 +23,12 @@ import cross from './cross.png'
 import mirror from './mirror.png'
 import doll from './doll.png'
 import runes from './runes.png'
+import ss1 from './ss1.png'
+import ss2 from './ss2.png'
+import ss3 from './ss3.png'
+import ss4 from './ss4.png'
+import ss5 from './ss5.png'
+import end from './end.png'
 
 
 
@@ -33,9 +38,6 @@ import runes from './runes.png'
 
 
 
-
-
-// You can replace these placeholders later
 export const assets = {
   Home,
   download,
@@ -55,14 +57,19 @@ export const assets = {
   circle,
   wall,
   knife,
-  candle,
   Book,
   skull,
   rose,
   cross,
   mirror,
   doll,
-  runes
+  runes,
+  ss1,
+  ss2,
+  ss3,
+  ss4,
+  ss5,
+  end
 };
 
 export const about = [
@@ -111,3 +118,45 @@ export const galleryImages = [knife, Book, skull, rose, cross, mirror];
 
 export { left, right };
 
+
+// screenshot 
+
+// Adjust the paths as per your project structure
+export const screenshots = [
+  {
+    id: 1,
+    image: ss1,
+  },
+  {
+    id: 2,
+    image: ss2,
+  },
+  {
+    id: 3,
+    image: ss3,
+  },
+  {
+    id: 4,
+    image: ss4,
+  },
+  {
+    id: 5,
+    image: ss5,
+  },
+  {
+    id: 6,
+    image: ss1,
+  },
+  {
+    id: 7,
+    image: ss2,
+  },
+  {
+    id: 8,
+    image: ss3,
+  },
+  {
+    id: 9,
+    image: ss4,
+  }
+];

@@ -35,12 +35,10 @@ const Gallery = () => {
     }, 7000);
   };
 
-  // 🔁 Shuffle positions every 2s after ritual is completed
   useEffect(() => {
     if (!ritualCompleted) return;
 
     const interval = setInterval(() => {
-      // Randomly shuffle the positions
       const shuffled = [...positions]
         .map(value => ({ value, sort: Math.random() }))
         .sort((a, b) => a.sort - b.sort)
@@ -121,7 +119,7 @@ const Gallery = () => {
               onClick={handleClick}
               className="substance-item absolute w-[50px] sm:w-[60px] md:w-[70px] cursor-pointer z-50"
               style={{ ...positions[index] }}
-              layout // ✅ For smooth animated transition
+              layout 
               animate={
                 isShaking
                   ? {

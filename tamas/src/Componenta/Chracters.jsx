@@ -10,7 +10,6 @@ const Characters = () => {
         </h2>
         <p className="text-white text-lg sm:text-xl mb-10">Tamas Characters</p>
 
-        {/* Grid container */}
         <div className="grid gap-12 sm:gap-16 md:grid-cols-2 w-full max-w-7xl px-2 sm:px-4">
           {chracter.map((item, index) => (
             <div
@@ -31,7 +30,6 @@ const Characters = () => {
         </div>
       </section>
 
-      {/* Extra 4 characters grid below */}
       <section className="w-full bg-gray-900  py-10 flex justify-center">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 sm:gap-8 max-w-7xl px-4">
           {extrachrac.map((item, index) => (

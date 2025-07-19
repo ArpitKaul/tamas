@@ -8,6 +8,7 @@ const About = () => {
   const { ref, inView } = useInView({ threshold: 0.3 });
   const [stepVisibility, setStepVisibility] = useState(Array(8).fill(false));
   const [stepFade, setStepFade] = useState(Array(8).fill(false));
+  const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(window.scrollY);
 
   const [scrollDir, setScrollDir] = useState('down');
@@ -19,11 +20,22 @@ const About = () => {
       lastScrollY.current = currentY;
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); 
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   useEffect(() => {
-    if (inView) {
+    if (inView && !isMobile) {
       const appearTimers = [];
       const fadeTimers = [];
 
@@ -45,7 +57,7 @@ const About = () => {
               updated[i] = true;
               return updated;
             });
-          }, i * 500 + 1500) 
+          }, i * 500 + 1500)
         );
       }
 
@@ -57,7 +69,7 @@ const About = () => {
       setStepVisibility(Array(8).fill(false));
       setStepFade(Array(8).fill(false));
     }
-  }, [inView]);
+  }, [inView, isMobile]);
 
   const footsteps = Array.from({ length: 8 }, (_, i) => ({
     image: i % 2 === 0 ? left : right,
@@ -75,30 +87,32 @@ const About = () => {
           Where Darkness Whispers... Tamas Begins
         </h2>
 
-        <div className="absolute top-[4.6rem] left-1/2 -translate-x-1/2 w-full max-w-5xl flex justify-between px-4 z-0 pointer-events-none">
-          {footsteps.map((foot, index) => (
-            <motion.img
-              key={index}
-              src={foot.image}
-              alt={`footstep-${index}`}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: stepVisibility[index]
-                  ? stepFade[index]
-                    ? 0
-                    : 0.7
-                  : 0,
-              }}
-              transition={{
-                duration: 0.8,
-                ease: 'easeInOut',
-              }}
-              className="w-16 sm:w-24 h-auto mx-2 sm:mx-3"
-            />
-          ))}
-        </div>
+        {!isMobile && (
+          <div className="absolute top-[4.6rem] left-1/2 -translate-x-1/2 w-full max-w-5xl flex justify-between px-4 z-0 pointer-events-none">
+            {footsteps.map((foot, index) => (
+              <motion.img
+                key={index}
+                src={foot.image}
+                alt={`footstep-${index}`}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: stepVisibility[index]
+                    ? stepFade[index]
+                      ? 0
+                      : 0.7
+                    : 0,
+                }}
+                transition={{
+                  duration: 0.8,
+                  ease: 'easeInOut',
+                }}
+                className="w-12 sm:w-16 md:w-20 h-auto mx-2"
+              />
+            ))}
+          </div>
+        )}
 
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3 mt-10">
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
           {about.map((item, index) => (
             <div
               key={index}
