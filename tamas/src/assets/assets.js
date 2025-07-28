@@ -28,6 +28,10 @@ import ss2 from './ss2.png'
 import ss3 from './ss3.png'
 import ss4 from './ss4.png'
 import ss5 from './ss5.png'
+import ss6 from './ss6.png'
+import ss7 from './ss7.png'
+import ss8 from './ss8.png'
+import ss9 from './ss9.png'
 import end from './end.png'
 
 
@@ -69,6 +73,10 @@ export const assets = {
   ss3,
   ss4,
   ss5,
+  ss6,
+  ss7,
+  ss8,
+  ss9,
   end
 };
 
@@ -119,9 +127,7 @@ export const galleryImages = [knife, Book, skull, rose, cross, mirror];
 export { left, right };
 
 
-// screenshot 
 
-// Adjust the paths as per your project structure
 export const screenshots = [
   {
     id: 1,
@@ -145,18 +151,18 @@ export const screenshots = [
   },
   {
     id: 6,
-    image: ss1,
+    image: ss6,
   },
   {
     id: 7,
-    image: ss2,
+    image: ss7,
   },
   {
     id: 8,
-    image: ss3,
+    image: ss8,
   },
   {
     id: 9,
-    image: ss4,
+    image: ss9,
   }
 ];
