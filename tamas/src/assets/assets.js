@@ -33,10 +33,15 @@ import ss7 from './ss7.png'
 import ss8 from './ss8.png'
 import ss9 from './ss9.png'
 import end from './end.png'
-
-
-
-
+import newspaper1 from './newspaper1.png'
+import newspaper2 from './newspaper2.png'
+import newspaper3 from './newspaper3.png'
+import main_news1 from './main_news1.png'
+import housevideo from './house.mp4'
+import mirror1 from './mirror.mp4'
+import church from './church.mp4'
+import hidden from './hidden.png'
+import candle from './candle.png'
 
 
 
@@ -77,7 +82,16 @@ export const assets = {
   ss7,
   ss8,
   ss9,
-  end
+  end,
+  newspaper1,
+  newspaper2,
+  newspaper3,
+  main_news1,
+  housevideo,
+  mirror1,
+  church,
+  hidden,
+  candle
 };
 
 export const about = [
@@ -124,7 +138,11 @@ export const extrachrac = [
 export const galleryImages = [knife, Book, skull, rose, cross, mirror];
 
 
+
+
 export { left, right };
+export { main_news1};
+
 
 
 
@@ -166,3 +184,52 @@ export const screenshots = [
     image: ss9,
   }
 ];
+
+
+export const newspapers = [
+  {
+    id: 1,
+    title: 'Mysterious Disappearances Continue',
+    image: newspaper1,
+    date: 'Oct 13, 1876',
+  },
+  {
+    id: 2,
+    title: 'Occult Ritual Found in Abandoned Church',
+    image: newspaper2,
+    date: 'Nov 2, 1890',
+  },
+  {
+    id: 3,
+    title: 'Eyewitness Sees Shadow Entity at Dusk',
+    image: newspaper3,
+    date: 'Jan 9, 1901',
+  },
+];
+
+
+
+// assets.js
+export const hiddenLetter = `
+Zane,
+
+If these words have found you, then the seal has broken...
+
+Light is both your guide and your curse. Every flicker awakens what once slept beneath silence — memories carved in ash and whisper.
+
+This place is older than time’s reckoning. It remembers you, even if you do not remember it.
+
+Do not speak aloud what you read here. The walls listen. The ink bleeds truth only for those who walk the border of shadow and flame.
+
+Seek the mark beneath the blackened stone.
+Speak the name only when the wind stands still.
+And when the candle weeps — you’ll know you're not alone.
+
+This page was never meant to be seen.
+
+— Tamas
+`;
+
+
+
+

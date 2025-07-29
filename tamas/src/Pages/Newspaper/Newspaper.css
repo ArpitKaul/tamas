@@ -1,0 +1,26 @@
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.5;
+  }
+  22%, 57% {
+    opacity: 0.2;
+  }
+}
+
+.candle-flicker {
+  animation: flicker 2s infinite;
+  filter: drop-shadow(0 0 10px #ffcc88);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+  80% { opacity: 0.85; transform: scale(0.95); }
+}
+
+.animate-flicker {
+  animation: flicker 1.4s infinite;
+}

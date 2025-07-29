@@ -1,18 +1,26 @@
 import React from 'react';
-import Navbar from './Componenta/Navbar';
-import Home from './Componenta/Home';
-import About from './Componenta/About';
-import Chracters from './Componenta/Chracters';
-import Gallery from './Componenta/Gallery';
-import Screenshot from './Componenta/Screenshot';
-import Thanks from './Componenta/Thanks';
-import Footer from './Footer';
+import { Routes, Route } from 'react-router-dom';
 
-const App = () => {
+// Pages
+import Explore from './Components/Explore';
+
+// Sections for homepage
+import Navbar from './Components/Navbar';
+import Home from './Components/Home';
+import About from './Components/About';
+import Chracters from './Components/Chracters';
+import Gallery from './Components/Gallery';
+import Screenshot from './Components/Screenshot';
+import Thanks from './Components/Thanks';
+import Footer from './Footer';
+import Newspaper from './Pages/Newspaper/Newspaper';
+
+// Homepage content
+const HomePage = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      
+
       <section id="home">
         <Home />
       </section>
@@ -32,13 +40,28 @@ const App = () => {
       <section id="screenshots">
         <Screenshot />
       </section>
-       <section id="Thanks">
-        <Thanks/>
+
+      <section id="explore">
+        <Explore />
       </section>
-       <section id="Footer">
-        <Footer/>
+
+      {/* <section id="thanks">
+        <Thanks />
+      </section> */}
+
+      <section id="footer">
+        <Footer />
       </section>
-    </div>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/newspaper" element={<Newspaper/>} />
+    </Routes>
   );
 };
 
