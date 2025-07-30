@@ -42,6 +42,7 @@ import mirror1 from './mirror.mp4'
 import church from './church.mp4'
 import hidden from './hidden.png'
 import candle from './candle.png'
+import radio from './radio.png'
 
 
 
@@ -91,7 +92,8 @@ export const assets = {
   mirror1,
   church,
   hidden,
-  candle
+  candle,
+  radio,
 };
 
 export const about = [

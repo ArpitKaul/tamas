@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { hiddenLetter, assets } from '../../assets/assets';
 import './Newspaper.css';
+import Radio from './Radio';
 
 const Candle = ({ initialX, initialY, onMove }) => {
   const [position, setPosition] = useState({ x: initialX, y: initialY });
@@ -111,6 +112,7 @@ const Hidden = () => {
           {hiddenLetter}
         </pre>
       </div>
+      <Radio/>
     </div>
   );
 };
