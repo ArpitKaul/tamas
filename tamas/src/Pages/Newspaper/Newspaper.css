@@ -24,3 +24,16 @@
 .animate-flicker {
   animation: flicker 1.4s infinite;
 }
+
+/* Add this to Newspaper.css */
+
+.reveal-letter {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  opacity: 0.15;
+  filter: blur(3px);
+}
+
+.reveal-letter.visible {
+  opacity: 1;
+  filter: blur(0px);
+}
