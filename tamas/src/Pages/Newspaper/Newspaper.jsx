@@ -4,16 +4,24 @@ import Hidden from './hidden';
 
 const Newspaper = () => {
   return (
-    <section
-      className="text-white py-16 px-6 bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url(${main_news1})` }}
-    >
+    <section className="relative text-white py-16 px-6 min-h-screen overflow-hidden">
+      {/* Lazy loaded background image */}
+      <img
+        src={main_news1}
+        alt="Newspaper background"
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      />
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70 z-0" />
 
+      {/* Headline */}
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-serif tracking-wider relative z-10">
         Tamas Headlines
       </h2>
 
+      {/* Newspaper Grid */}
       <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto relative z-10">
         {newspapers.map((paper, index) => (
           <div
@@ -23,6 +31,7 @@ const Newspaper = () => {
             <img
               src={paper.image}
               alt={paper.title}
+              loading="lazy"
               className="w-full h-[35rem] object-cover"
             />
 
@@ -30,6 +39,7 @@ const Newspaper = () => {
               <video
                 src={assets.housevideo}
                 autoPlay
+                loading="lazy"
                 loop
                 muted
                 playsInline
@@ -41,6 +51,7 @@ const Newspaper = () => {
               <video
                 src={assets.mirror1}
                 autoPlay
+                loading="lazy"
                 loop
                 muted
                 playsInline
@@ -52,6 +63,7 @@ const Newspaper = () => {
               <video
                 src={assets.church}
                 autoPlay
+                loading="lazy"
                 loop
                 muted
                 playsInline
@@ -61,7 +73,9 @@ const Newspaper = () => {
           </div>
         ))}
       </div>
-      <Hidden/>
+
+      {/* Hidden Component */}
+      <Hidden />
     </section>
   );
 };

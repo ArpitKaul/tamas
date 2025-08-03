@@ -1,11 +1,20 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { FaGithub, FaDiscord, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
-  return (
-    <footer className="w-full bg-black text-gray-400 py-10 px-6 border-t border-gray-800">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+  const location = useLocation();
+  const isNewspaperPage = location.pathname === '/newspaper';
 
+  return (
+    <footer
+      className={`w-full py-10 px-6 border-t transition-all duration-500 ${
+        isNewspaperPage
+          ? 'bg-black/80 text-gray-300 border-gray-700'
+          : 'bg-black text-gray-400 border-gray-800'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
         {/* Left - Game Title */}
         <div>
           <h2 className="text-2xl font-bold text-white tracking-wide">TAMAS</h2>
@@ -34,7 +43,6 @@ const Footer = () => {
           </div>
           <p className="text-xs mt-4 italic">See you beyond the veil.</p>
         </div>
-
       </div>
 
       <div className="mt-8 text-center text-xs text-gray-600">

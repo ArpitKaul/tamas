@@ -1,10 +1,9 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; // ✅ no BrowserRouter here
 
-// Pages
+import ScrollToTop from './Components/ScrollToTop'; // ✅
+
 import Explore from './Components/Explore';
-
-// Sections for homepage
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import About from './Components/About';
@@ -15,7 +14,6 @@ import Thanks from './Components/Thanks';
 import Footer from './Footer';
 import Newspaper from './Pages/Newspaper/Newspaper';
 
-// Homepage content
 const HomePage = () => {
   return (
     <>
@@ -49,19 +47,22 @@ const HomePage = () => {
         <Thanks />
       </section> */}
 
-      <section id="footer">
-        <Footer />
-      </section>
+      
     </>
   );
 };
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/newspaper" element={<Newspaper/>} />
-    </Routes>
+    <>
+      <ScrollToTop /> {/* ✅ this stays */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/newspaper" element={<Newspaper />} />
+      </Routes>
+        <Footer />
+
+    </>
   );
 };
 

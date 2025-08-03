@@ -51,12 +51,20 @@ const Gallery = () => {
   }, [ritualCompleted, positions]);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden relative">
+      {/* Lazy-loaded background image */}
+      <img
+        src={assets.wall}
+        alt="Background Wall"
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        loading="lazy"
+      />
+
       <section
         className={`w-full min-h-screen text-white px-4 py-12 md:py-8 flex flex-col items-center justify-center bg-cover bg-center relative ${
           isShaking ? 'gallery-turbulence' : ''
         }`}
-        style={{ backgroundImage: `url(${assets.wall})` }}
+        style={{ backgroundImage: 'none' }} // We override backgroundImage here
       >
         {isShaking && (
           <div className="absolute inset-0 bg-opacity-60 z-30 pointer-events-none" />
@@ -67,11 +75,13 @@ const Gallery = () => {
             src={assets.runes}
             alt="Glowing Runes"
             className="absolute inset-0 w-full h-full object-cover animate-glow z-10"
+            loading="lazy"
           />
         )}
 
         <motion.img
           src={assets.doll}
+          loading="lazy"
           alt="Left Doll"
           className="hidden md:block absolute top-0 left-0 h-[40%] z-40"
           animate={
@@ -85,6 +95,7 @@ const Gallery = () => {
         />
         <motion.img
           src={assets.doll}
+          loading="lazy"
           alt="Right Doll"
           className="hidden md:block absolute top-0 right-0 h-[40%] z-40"
           animate={
@@ -107,6 +118,7 @@ const Gallery = () => {
         <div className="relative w-[400px] sm:w-[500px] md:w-[600px] aspect-square z-50">
           <img
             src={assets.circle}
+            loading="lazy"
             alt="Summoning Circle"
             className="w-full h-full object-contain"
           />
@@ -115,11 +127,12 @@ const Gallery = () => {
             <motion.img
               key={index}
               src={img}
+              loading="lazy"
               alt={`Substance ${index + 1}`}
               onClick={handleClick}
               className="substance-item absolute w-[50px] sm:w-[60px] md:w-[70px] cursor-pointer z-50"
               style={{ ...positions[index] }}
-              layout 
+              layout
               animate={
                 isShaking
                   ? {

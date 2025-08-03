@@ -93,6 +93,7 @@ const About = () => {
               <motion.img
                 key={index}
                 src={foot.image}
+                loading='lazy'
                 alt={`footstep-${index}`}
                 initial={{ opacity: 0 }}
                 animate={{
@@ -122,6 +123,7 @@ const About = () => {
                 src={item.image}
                 alt={`about-${index}`}
                 className="w-full h-40 sm:h-48 object-cover rounded-md mb-4"
+                loading='lazy'
               />
               <p className="text-gray-300 text-base sm:text-lg">
                 {item.description}

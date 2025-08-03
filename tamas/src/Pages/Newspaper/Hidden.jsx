@@ -52,7 +52,7 @@ const Candle = ({ initialX, initialY, onMove }) => {
         transition: dragging ? 'none' : 'all 0.3s ease-out',
       }}
     >
-      <img src={assets.candle} alt="Draggable Candle" className="h-32 pointer-events-none" />
+      <img src={assets.candle} loading='lazy' alt="Draggable Candle" className="h-32 pointer-events-none" />
       <div
         className="absolute"
         style={{

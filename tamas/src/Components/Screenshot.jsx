@@ -15,6 +15,7 @@ const Screenshot = () => {
           >
             <img
               src={image}
+              loading='lazy'
               alt={`Screenshot ${id}`}
               className="w-full h-[400px] object-cover"
             />

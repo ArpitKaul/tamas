@@ -43,6 +43,15 @@ import church from './church.mp4'
 import hidden from './hidden.png'
 import candle from './candle.png'
 import radio from './radio.png'
+import bench from './bench.png'
+import wave from './wave.mp4'
+import audio from './audio.mp3'
+import envelope from './envelope.png'
+import lefthand from './lefthand.png'
+import righthand from './righthand.png'
+import audio1 from './audio1.mp3'
+import main_news from './main_news.png'
+
 
 
 
@@ -94,6 +103,14 @@ export const assets = {
   hidden,
   candle,
   radio,
+  wave,
+  bench,
+  audio,
+  envelope,
+  lefthand,
+  righthand,
+  audio1,
+  main_news
 };
 
 export const about = [
@@ -144,6 +161,7 @@ export const galleryImages = [knife, Book, skull, rose, cross, mirror];
 
 export { left, right };
 export { main_news1};
+export { main_news};
 
 
 

@@ -18,6 +18,7 @@ const Characters = () => {
             >
               <img
                 src={item.image}
+                loading='lazy'
                 alt={item.name}
                 className="w-full sm:w-[30rem] h-[24rem] sm:h-[40rem] object-cover rounded-lg"
               />
@@ -36,6 +37,7 @@ const Characters = () => {
             <div key={index} className="flex flex-col items-center">
               <img
                 src={item.image}
+                loading='lazy'
                 alt={assets.name}
                 className="w-40 sm:w-48 md:w-[30rem] h-auto md:h-80 rounded-xl shadow-lg"
               />

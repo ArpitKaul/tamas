@@ -8,6 +8,7 @@ const Home = () => {
         src={assets.Home}
         alt="Tamas Home"
         className="w-full h-full object-cove"
+        loading='lazy'
       />
 
       <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#0f1a12] z-10" />
